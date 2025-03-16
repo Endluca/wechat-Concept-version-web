@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信概念版，简洁强大</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            width: 100%;
+            height: 54px;
+            background-color: #2aae67;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        .header-lit{
+            position: relative;
+            margin-left: 100px;
+        }
+        .header button {
+            margin-left: 20px;
+            padding: 5px 10px;
+            border: none;
+            opacity: 0.7;
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .header img {
+            position: absolute;
+            top: 1%;
+            left: 3%;
+            weight: 38px;
+            height: 38px;
+            margin-right: 10px;
+        }
+        .header button:hover {
+            opacity: 0.9;
+        }
+        .text-head p{
+            position: absolute;
+            top: 17%;
+            left: 20%;
+            font-size: 32px;
+        }
+        .text-body{
+            position: absolute;
+            top: 35%;
+            left: 20%;
+            font-size: 17px;
+        }
+        .text-body p{
+            line-height: 1.7;
+            margin-bottom: 26px;
+        }
+        .link-text a{
+            color: #66799f;
+            text-decoration: none;
+        }
+        .contact-menu-container {
+            position: absolute;
+            top: 8%; /* 容器垂直居中 */
+            left: calc(300px); /* 容器距离按钮右侧的距离 */
+            height: 80px;
+            width: 400px;
+            background-color: white; /* 白色背景 */
+            padding: 0;
+            z-index: 1;
+            display: none;
+        }
+        .contact-menu {
+            padding: 0;
+            display: none; /* 默认隐藏下拉菜单 */
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            display: none; /* 默认隐藏遮罩层 */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="微信概念版官网页.html">
+          <img src="微信小logo.png" alt="logo">
+        </a>
+        <div class="header-lit">
+            <button onclick="window.location.href='创作初心.html'">创作初心</button>
+            <button onclick="window.location.href='赞赏我们.html'">赞赏我们</button>
+            <button onclick="toggleContactMenu()">联系我们</button>
+        </div>
+        <div class="contact-menu-container" id="contactMenuContainer">
+            <div class="contact-menu">
+                <a>电话：19314852041<br>Email：koukou20232023@outlook.com<br>地址：河北省保定学院</a>
+            </div>
+        </div>
+    </div>
+    <div class="text-head">
+        <p>
+            微信概念版 1.2.32 for iOS 重磅推出
+        </p>
+    </div>
+    <div class="text-body">
+        <p>
+            发布日期： 2023-12-02
+        </p>
+        <p>
+            发布版本： 微信概念版 1.2.32 for ios <span class="link-text"><a href="mac.png" download="mac.png">下载首发版本</a></span>
+        </p>
+        <p>
+            微信概念版，回归微信原本的极简功能，仅保留了必需的通过网络给好友发送文字消息、表情和图片，<br>可以传送文件，与朋友视频聊天，去掉了繁杂的各种功能，让你的沟通更方便。并提供有多种语言界面。
+        </p>
+        <p style="font-weight: bold;">
+            如果您觉得我们的应用不错，可以给我们<span class="link-text"><a href="赞赏我们.html">赞赏</a></span>
+        </p>
+    </div>
+    <div class="overlay" id="overlay" onclick="hideContactMenu()"></div>
+    <script>
+        function toggleContactMenu() {
+            var menu = document.querySelector(".contact-menu");
+            var container = document.getElementById("contactMenuContainer");
+            var overlay = document.getElementById("overlay");
+
+            if (menu.style.display === "block") {
+                hideContactMenu();
+            } else {
+                menu.style.display = "block";
+                container.style.display = "block";
+                overlay.style.display = "block";
+            }
+        }
+
+        function hideContactMenu() {
+            var menu = document.querySelector(".contact-menu");
+            var container = document.getElementById("contactMenuContainer");
+            var overlay = document.getElementById("overlay");
+
+            menu.style.display = "none";
+            container.style.display = "none";
+            overlay.style.display = "none";
+        }
+    </script>
+</body>
+</html>

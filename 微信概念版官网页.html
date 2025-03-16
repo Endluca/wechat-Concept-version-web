@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background-color: #2aae67;
+      margin: 0;
+      padding: 0;
+    }
+    .wechat-head {
+      color: #ffffff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .logo-and-title {
+      position: absolute;
+      top: 16%;
+      left: 41%;
+      font-size: 37px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 200px;
+    }
+    .logo-and-title img{
+      width: 70px;
+      height: 70px;
+    }
+    .wechat-logo {
+      width: 75px;
+      height: 75px;
+      margin-right: 10px;
+    }
+    .btn-container {
+      position: absolute;
+      top: 71%;
+      left: 23%;
+      display: flex;
+      justify-content: center;
+    }
+    .circle-btn1 {
+      background: url('and.png') no-repeat center center;
+      position: relative;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 0 18px;
+      transition: opacity 0.5s;
+    }
+    .circle-btn1:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+    .circle-btn2 {
+      background: url('ios.png') no-repeat center center;
+      position: relative;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 0 18px;
+      transition: opacity 0.5s;
+    }
+    .circle-btn2:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+    .circle-btn3 {
+      background: url('win.png') no-repeat center center;
+      position: relative;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 0 18px;
+      transition: opacity 0.5s;
+    }
+    .circle-btn3:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+    .circle-btn4 {
+      background: url('mac.png') no-repeat center center;
+      position: relative;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 0 18px;
+      transition: opacity 0.5s;
+    }
+    .circle-btn4:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+    .circle-btn5 {
+      background: url('wenjian.png') no-repeat center center;
+      position: relative;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      margin: 0 18px;
+      transition: opacity 0.5s;
+    }
+    .circle-btn5:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+    .circle-btn2 img {
+      position: absolute;
+      width: 118px;
+      height: 118px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+    .popup-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
+    .popup-content {
+      position: relative;
+      width: 400px;
+      height: 250px;
+      background-color: white;
+      border-radius: 5px;
+      padding: 20px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      cursor: pointer;
+      font-size: 30px;
+    }
+    .link1 {
+      color: #ffffff; /* 修改链接文本颜色为白色 */
+      text-decoration: none; /* 去除下划线 */
+      font-size: 17px; /* 更改字体大小为16像素 */
+      display: block; /* 将链接元素变为块级元素，使其换行显示 */
+      position: absolute;
+      top: 39%;
+      left: 33%;
+
+    }
+    .link2 {
+      color: #ffffff; /* 修改链接文本颜色为白色 */
+      text-decoration: none; /* 去除下划线 */
+      font-size: 17px; /* 更改字体大小为16像素 */
+      position: absolute;
+      top: 45%;
+      left: 33%;
+
+    }
+    .all-links{
+      color: #ffffff; /* 修改链接文本颜色为白色 */
+      text-decoration: none; /* 去除下划线 */
+      font-size: 18px; /* 更改字体大小为16像素 */
+      position: absolute;
+      top: 54%;
+      left: 33%;
+    }
+    .time1{
+      color: white;
+      font-size: 16px;
+      position: absolute;
+      opacity: 0.8; /* 设置透明度为50% */
+      top: 39%;
+      left: 67%;
+    }
+    .time2{
+      color: white;
+      font-size: 16px;
+      position: absolute;
+      opacity: 0.8; /* 设置透明度为50% */
+      top: 45%;
+      left: 67%;
+    }
+    .white-logo{
+      position: absolute;
+      top: 33%;
+      left: 33%;
+    }
+    .popup-container-title{
+      position: absolute;
+      top: 19%;
+      left: 29%;
+      font-size: 24px;
+    }
+    .popup-container-btn{
+      position: absolute;
+      top: 60%;
+      left: 22%;
+      font-size: 20px;
+      border: none;
+      width: 250px;  /* 设置按钮宽度 */
+      height: 70px;
+      background-color: #07c160;
+      color: white;
+      border-radius: 6px;
+    }
+
+
+  </style>
+  <title>微信概念版，简洁强大</title>
+</head>
+
+<body>
+  <header>
+    <div class="wechat-head">
+      <div class="logo-and-title">
+        <img src="logo.png" alt="微信logo" class="wechat-logo">
+        <div>
+          <p>微信概念版</p>
+        </div>
+      </div>
+      <img src="white.png" alt="图片描述" class="white-logo">
+      <div class="logs">
+        <a href="安卓正式版日志.html" class="link1">微信概念版 1.2.32 for Android 正式版发布</a>
+        <a href="ios正式版日志.html" class="link2">微信概念版 1.2.32 for iOS 正式版发布</a>
+        <a href="更多日志.html" class="all-links">更多日志 ></a>
+      </div>
+      <div class="logs-times">
+        <div class="time1">
+          12-05
+        </div>
+        <div class="time2">
+          12-02
+        </div>
+      </div>
+      <div class="btn-container">
+        <div class="circle-btn1" onclick="showPopup()"></div>
+        <div class="circle-btn2 show-image" onmouseover="showImage(this)" onmouseleave="hideImage(this)">
+          <img src="二维码.jpg" alt="图片">
+        </div>
+        <div class="circle-btn3" onclick="redirectTo('https://pc.weixin.qq.com/')"></div>
+        <div class="circle-btn4" onclick="redirectTo('https://mac.weixin.qq.com/?t=mac&lang=zh_CN')"></div>
+        <div class="circle-btn5" onclick="redirectTo('https://filehelper.weixin.qq.com/')"></div>
+      </div>
+    </div>
+  </header>
+
+  <div id="popupContainer" class="popup-container" style="display: none;">
+    <div class="popup-content">
+      <span class="close-btn" onclick="hidePopup()">×</span>
+      <p class="popup-container-title">下载 Android 版</p>
+      <button class="popup-container-btn" onclick="downloadFile()">下载64位安装包</button>
+    </div>
+  </div>
+
+  <script>
+    function redirectTo(url) {
+      window.location.href = url;
+    }
+    function showImage(element) {
+      element.getElementsByTagName('img')[0].style.display = 'block';
+    }
+    function downloadAndroidApp() {
+      alert('开始下载Android版本！');
+    }
+    function hideImage(element) {
+      element.getElementsByTagName('img')[0].style.display = 'none';
+    }
+    function showPopup() {
+      document.getElementById('popupContainer').style.display = 'flex';
+    }
+    function hidePopup() {
+      document.getElementById('popupContainer').style.display = 'none';
+    }
+    function downloadFile() {
+      // 创建一个隐藏的&lta&gt标签
+      var link = document.createElement('a');
+      link.style.display = 'none';
+
+      // 设置文件的URL和名称
+      link.href = 'win.png';
+      link.download = 'win.png';
+
+      // 添加到文档中
+      document.body.appendChild(link);
+
+      // 模拟点击下载链接
+      link.click();
+
+      // 清理
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
